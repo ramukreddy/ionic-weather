@@ -1,17 +1,19 @@
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA,NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab1Page } from './tab1.page';
+import { CurrentWeatherPage } from './tab1.page';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: Tab1Page }])
+    RouterModule.forChild([{ path: '', component: CurrentWeatherPage }])
   ],
-  declarations: [Tab1Page]
+  declarations: [CurrentWeatherPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
-export class Tab1PageModule {}
+export class CurrentWeatherPageModule {}
