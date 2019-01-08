@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { UVIndex } from '../models/uv-index';
+import { WeatherService } from '../services/weather/weather.service';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-uv-index',
+  templateUrl: 'uv-index.page.html',
+  styleUrls: ['uv-index.page.scss']
 })
 export class UVIndexPage {
   uvIndex: UVIndex = {
@@ -29,5 +30,10 @@ export class UVIndexPage {
       'and after swimming or sweating. Bright surfaces, such as sand, water and snow, will increase UV exposure.'
   ];
 
-  constructor() {}
+  constructor(private weatherService:WeatherService) {}
+
+  ionViewDidEnter() {
+    this.weatherService.uvIndex().subscribe(uv=>this.uvIndex=uv);
+  }
+
 }

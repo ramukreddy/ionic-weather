@@ -1,9 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ForecastPage } from './tab2.page';
+import { ForecastPage } from './forecast.page';
 
-describe('Tab2Page', () => {
+describe('forecast', () => {
   let component: ForecastPage;
   let fixture: ComponentFixture<ForecastPage>;
 
